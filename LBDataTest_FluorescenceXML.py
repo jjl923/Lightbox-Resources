@@ -17,6 +17,14 @@ ser = serial.Serial(serPort, baudRate)
 startMarker = 60
 endMarker = 62
 
+a = np.zeros(96,dtype=int)
+np.save('ratio_1.npy', a) 
+
+dataframe = pd.DataFrame()
+dataframe.to_pickle("graph_data.pkl")
+
+print(np.load('ratio.npy'))
+
 
 def sendToArduino(sendStr):
     ser.write(sendStr.encode('utf-8')) # change for Python3
